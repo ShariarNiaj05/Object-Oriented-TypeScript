@@ -30,10 +30,21 @@
     }
   }
 
+  /****
+   * smart way of handling type using function
+   */
+
+  const isDog = (animal: Animal): animal is Dog => {
+    return animal instanceof Dog;
+  };
+  const isCat = (animal: Animal): animal is Cat => {
+    return animal instanceof Cat;
+  };
+
   const getAnimal = (animal: Animal) => {
-    if (animal instanceof Dog) {
+    if (isDog(animal)) {
       animal.makeBark();
-    } else if (animal instanceof Cat) {
+    } else if (isCat(animal)) {
       animal.makeMew();
     } else {
       animal.makeSound();

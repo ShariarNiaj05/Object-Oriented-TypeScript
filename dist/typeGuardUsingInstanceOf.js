@@ -26,6 +26,28 @@
             console.log("cat is mewing");
         }
     }
+    /****
+     * smart way of handling type using function
+     */
+    const isDog = (animal) => {
+        return animal instanceof Dog;
+    };
+    const isCat = (animal) => {
+        return animal instanceof Cat;
+    };
+    const getAnimal = (animal) => {
+        if (isDog(animal)) {
+            animal.makeBark();
+        }
+        else if (isCat(animal)) {
+            animal.makeMew();
+        }
+        else {
+            animal.makeSound();
+        }
+    };
     const dog = new Dog("doggy", "german");
     const cat = new Cat("catty", "cat species");
+    getAnimal(dog);
+    getAnimal(cat);
 }
