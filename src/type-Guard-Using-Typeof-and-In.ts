@@ -13,5 +13,34 @@
 
   const res1 = add(5, 7);
   const res2 = add(5, "8");
-  console.log({ res1 }, {res2});
+  //   console.log({ res1 }, { res2 });
+
+  // in  guard
+  type NormalUser = {
+    name: string;
+  };
+
+  type AdminUser = {
+    name: string;
+    role: "admin";
+  };
+
+  const getUser = (user: NormalUser | AdminUser) => {
+    if ("role" in user) {
+      console.log("admin user");
+    } else {
+      console.log("normal user");
+    }
+  };
+
+  const normalUser: NormalUser = {
+    name: "MR. Normal",
+  };
+  const adminUser: AdminUser = {
+    name: "Mr. Admin",
+    role: "admin",
+    };
+    
+    getUser(normalUser)
+    getUser(adminUser)
 }
