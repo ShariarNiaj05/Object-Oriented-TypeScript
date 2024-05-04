@@ -10,5 +10,21 @@
     };
     const res1 = add(5, 7);
     const res2 = add(5, "8");
-    console.log({ res1 }, { res2 });
+    const getUser = (user) => {
+        if ("role" in user) {
+            console.log("admin user");
+        }
+        else {
+            console.log("normal user");
+        }
+    };
+    const normalUser = {
+        name: "MR. Normal",
+    };
+    const adminUser = {
+        name: "Mr. Admin",
+        role: "admin",
+    };
+    getUser(normalUser);
+    getUser(adminUser);
 }
