@@ -7,9 +7,9 @@
    *  */
 
   class Animal {
-    name: string;
-    species: string;
-    sound: string;
+    public name: string;
+    public species: string;
+    public sound: string;
 
     constructor(name: string, species: string, sound: string) {
       this.name = name;
@@ -23,10 +23,27 @@
   }
 
   const dog = new Animal("Dog name", "German", "Ghew Ghew");
-  console.log(dog.name);
+  //   console.log(dog.name);
   const cat = new Animal("cat bhai", "don't know", "Mew Mew");
-  console.log(cat.sound);
+  //   console.log(cat.sound);
 
-  cat.makeSound()
+  //   cat.makeSound()
+
+  // parameter property ---------------- for cleaner code
+  class Animal1 {
+    constructor(
+      public name: string,
+      public species: string,
+      public sound: string
+    ) {}
+
+    makeSound() {
+      console.log(`The ${this.name} make sounds like ${this.sound}`);
+    }
+  }
+
+  const cat1 = new Animal1("cat bhai", "don't know", "Mew Mew");
+  cat1.name;
+
   // ------------------
 }
