@@ -37,5 +37,5 @@
   //   goribAccount.addDeposit = 0;
     const myBalace = goribAccount.balance; //using like property
     const myNewBalance = goribAccount.deposit = 30
-  console.log(myNewBalance);
+//   console.log(myNewBalance);
 }
